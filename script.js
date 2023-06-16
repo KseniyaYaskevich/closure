@@ -19,11 +19,11 @@ const playGame = function (randomNumber, attempt) {
 
     if (userNumber > randomNumber) {
       alert(`Загаданное число меньше, осталось попыток ${attempt}`);
-
-    } else if (userNumber < randomNumber) {
+    }
+    if (userNumber < randomNumber) {
       alert(`Загаданное число больше, осталось попыток ${attempt}`);
-
-    } else if (userNumber === randomNumber) {
+    }
+    if (userNumber === randomNumber) {
       isStarted = Boolean(confirm('Поздравляю, Вы угадали!!! Хотели бы сыграть еще?'));
 
       if (isStarted) {
@@ -48,7 +48,8 @@ const askQuestion = function (isStarted) {
     if (userAnswer === null) {
       isStarted = false;
       askQuestion(isStarted);
-    } else if (!isNumber(userAnswer)) {
+    }
+    if (!isNumber(userAnswer)) {
       alert('Введите число!');
       isStarted = true;
       askQuestion(isStarted);
